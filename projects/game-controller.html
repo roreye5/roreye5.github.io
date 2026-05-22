@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Video Game Controller Enhancements | Project Details</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <script src="https://kit.fontawesome.com/52f482920d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="../index.html#embedded" class="back-link">← Back to Projects</a>
+  </header>
+
+  <main class="project-detail">
+    <h1>Video Game Controller Enhancements</h1>
+    <img src="../pics/GameRC.jpeg" alt="Controller image" class="project-image" />
+    <!-- <video class="project-image" width="100%" width="100%" frameborder="0" autoplay muted controls>
+      <source src="../pics/pinball.mp4" type="video/mp4">
+      Your browser does NOT support this video tag.
+    </video> -->
+
+    <section class="project-description">
+      <h2>Overview</h2>
+      <p>
+        This project involved designing and implementing a wireless ESP32-based game controller for a modified 
+        version of the classic Space Invaders game. The controller communicated with the game via sockets and 
+        Bluetooth, enabling real-time movement, firing, haptic feedback, and visual indicators. The goal was to 
+        redesign the controller to be more intuitive, more responsive, and more feature-rich by implementing three 
+        major improvements and adding three new hardware-driven features.
+      </p>
+
+      <h2>Key Improvements Implemented</h2>
+        <h3>1. Improved Movement Responsiveness</h3>
+            <ul>
+                <li>Calibrated the accelerometer using empirically derived thresholds, enabling four sensitivity levels tied to X-axis acceleration.</li>
+                <li>Rewrote movement logic to isolate X-axis data and remove interference from Y/Z axes.</li>
+                <li>Enhanced smoothness and precision by mapping tilt angle to proportional movement speed.</li>
+            </ul>
+        <h3>2. Decoupled Movement and Firing Actions</h3>
+            <ul>
+                <li>Refactored command parsing in the game code:</li>
+                    <ul>
+                        <li>Original version only allowed one command per frame.</li>
+                        <li>Updated to detect multiple simultaneous actions by checking for command substrings instead of full-string matches.</li>
+                    </ul>
+                <li>Result: Player can <strong>fire while moving</strong>, drastically improving playability.</li>
+            </ul>
+        <h3>3. Added Photodetector-Based Firing</h3>
+            <ul>
+                <li>Replaced forward-tilt firing with a more intuitive <strong>photodetector “touch-to-fire”</strong> mechanism.</li>
+                <li>When the PPG sensor reading rises above a threshold, the controller sends continuous "FIRE" commands.</li>
+                <li>Improved firing precision and removed conflicts with movement.</li>
+            </ul>
+
+      <h2>New Features Added</h2>
+        <h3>1. Haptic Feedback When Shot</h3>
+            <ul>
+                <li>Implemented buzz motor activation when the player is hit:</li>
+                <li>Adds an immersive tactile feedback layer for gameplay.</li>
+            </ul>
+        <h3>2. Life Counter With LED Indicators</h3>
+            <ul>
+                <li>Added a three-LED system (green → yellow → red) to visually display remaining lives on the controller.</li>
+                <li>Automatically resets LEDs when the game restarts.</li>
+            </ul>
+        <h3>3. OLED Display for Score and Lives</h3>
+            <ul>
+                <li>Added an on-device scoreboard that updates in real time.</li>
+                <li>ESP32 stores and displays: Current score and Remaining lives (synced with LED system)</li>
+            </ul>
+
+        <!-- TECH STACK -->
+        <h2>Technologies Used</h2>
+        <p><strong>Software:</strong> Python (Pygame) • Socket Programming • Arduino (C++) • Bluetooth</p>
+        <p><strong>Hardware:</strong> ESP32 • OLED Display • 3-axis Accelerometer • Photodetector • Vibration Motor • LEDs</p>
+    
+
+      <div class="project-links">
+        <!-- <a href="https://github.com/roreye5/smartwatch" target="_blank" rel="noopener noreferrer">
+          <span class="fa-brands fa-github fa-regular" style="color: hsl(212, 92%, 68%);"></span> 
+          View GitHub
+        </a> -->
+        <a href="https://youtu.be/nkUvbnEm40k?si=RuHBkc9tYeVuB01G" target="_blank" rel="noopener noreferrer">
+          <span class="fa-brands fa-youtube fa-regular" style="color: hsl(212, 92%, 68%);"></span>
+          Game Controller Demo Video
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2024 RobertoR. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

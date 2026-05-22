@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Decentralized Communication Device| Project Details</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <script src="https://kit.fontawesome.com/52f482920d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="../index.html#embedded" class="back-link">← Back to Projects</a>
+  </header>
+
+  <main class="project-detail">
+    <h1>Decentralized Communication Device</h1>
+    <img src="../pics/comDevPCB.jpg" alt="8-bit adder schematic" class="project-image" />
+
+    <section class="project-description">
+      <h2>Overview</h2>
+      <p>
+        This project tackles the problem of unreliable or unavailable communication during group hikes in remote areas. 
+        We designed and prototyped a decentralized communication device that allows group members to send and receive short 
+        predefined messages without relying on cell service, Wi-Fi, or GPS.
+      </p>
+      <p>
+        Each device uses ESP32 microcontrollers and the ESP-NOW protocol to form a low-power peer-to-peer mesh network. 
+        The interface includes a menu system with options for pairing, sending messages, and viewing an inbox. Our goal was 
+        to create a lightweight, user-friendly solution that improves safety and coordination in off-grid environments.
+      </p>
+
+      <h2>Design Approach</h2>
+      <ul>
+        <li>Built around the ESP32 microcontroller and leverages the ESP-NOW protocol to enable decentralized, peer-to-peer communication without any central server, router, or base station</li>
+        <li>Each device can send and receive predefined short messages to and from paired group members, forming a lightweight mesh network</li>
+        <li>Interface is built with a simple menu system controlled by a push button and OLED screen.</li>
+        <li>Users can access three core features: <strong>Inbox</strong> (view received messages), <strong>Send Message</strong> (select and broadcast a message), and <strong>Pairing</strong> (join/create a communication group).</li>
+      </ul>
+
+
+      <h2>Challenges</h2>
+      <p>
+        One of the biggest challenges was implementing a custom broadcast-based message propagation system. 
+        Each message consisted of the sender’s MAC address and a predefined message ID. Devices maintained a queue of their own message plus 
+        unique messages received from others. When a message queue was received, it was parsed: if a message was from a paired device, it was 
+        added to the inbox; if it was from an unknown device but not yet in the local queue, it was added and rebroadcast. This allowed all devices 
+        to relay messages without needing direct links, while still preserving privacy and inbox clarity for only paired members.
+      </p>
+      <p>
+        Managing reliable communication between devices using the ESP-NOW protocol. Since ESP-NOW 
+        requires knowing each device’s MAC address ahead of time, we had to design a custom pairing system that allowed devices to 
+        discover and store each other's addresses dynamically while maintaining a lightweight memory footprint.
+      </p>
+      <p>
+        Balancing usability and simplicity on a small OLED display with minimal input controls also took iteration, especially when 
+        navigating between menu options and selecting messages quickly during testing.
+      </p>
+
+      <h2>Collaboration</h2>
+      <p>
+        I worked on this project as part of a three-person team, collaborating with Roger Lin and Hou Dren Yuen. My primary contributions 
+        were designing and implementing the device’s user interface, including the main menu, message selection screen, and pairing mode. I 
+        also developed the full pairing logic and interface, allowing devices to dynamically connect and assign each other contact initials using their MAC addresses. 
+        Additionally, I reviewed and refined the firmware codebase, identifying and fixing redundant logic to ensure smooth 
+        and reliable functionality across all features.
+      </p>
+
+      <div class="project-links">
+        <a href="https://sites.google.com/ucsd.edu/ece-196-fp-s25" target="_blank">View Project Website</a>
+        <a href="https://github.com/KengLL/Hiking-Board-ESPNOW" target="_blank">
+          <span class="fa-brands fa-github fa-regular" style="color: hsl(212, 92%, 68%);"></span>
+          View Code
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2024 RobertoR. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

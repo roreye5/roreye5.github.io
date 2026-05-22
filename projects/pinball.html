@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pinball Machine Prototype | Project Details</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <script src="https://kit.fontawesome.com/52f482920d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="../index.html#embedded" class="back-link">← Back to Projects</a>
+  </header>
+
+  <main class="project-detail">
+    <h1>Pinball Machine Prototype</h1>
+    <!-- <img src="../pics/GameRC.jpeg" alt="Controller image" class="project-image" /> -->
+    <video class="project-image" width="100%" width="100%" frameborder="0" autoplay muted controls>
+      <source src="../pics/pinball.mp4" type="video/mp4">
+      Your browser does NOT support this video tag.
+    </video>
+
+    <section class="project-description">
+      <h2>Overview</h2>
+      <p>
+        I designed and built a fully playable electromechanical pinball machine featuring real-time scoring, 
+        optical and impact sensing, solenoid-actuated flippers, motorized obstacles, multi-LED lighting effects, 
+        and a custom display system. The system integrated mechanical components, embedded electronics, and 
+        firmware into a complete interactive game.
+      </p>
+      
+      <section>
+        <h2>My Role</h2>
+        <p>I owned key aspects of the mechanical and software design, including:</p>
+        <ul>
+            <li><strong>Firmware (C++ / Arduino):</strong><br>Wrote event-driven firmware for real-time sensor handling, 
+                score updates, servo/DC motor control, light patterns, and gameplay logic.</li>
+            <li><strong>CAD and mechanical design:</strong><br>Contributed to the full playfield layout, obstacle geometry, solenoid and motor mounts, 
+                brackets, and enclosures using OnShape; fabricated components via 3D printing and laser cutting.</li>
+            <li><strong>Debugging, wiring & integration:</strong><br>Assembled and organized wiring across multiple subsystems, validated sensors, tested 
+                power distribution, and debugged issues with noise, weak sensor signals, and intermittent connections.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>System Architecture & Key Features</h2>
+        <section>
+            <h3>Sensing & Game Input</h3>
+            <ul>
+                <li><strong>Optical Sensors (IR break beams): </strong><br>Used to detect ball entry/exit in scoring regions. Each sensor fed into a 
+                    non-inverting amplifier followed by a hysteretic comparator, producing stable digital signals for the Arduino.
+                </li>
+                <li><strong>Impact Sensors (Piezo elements): </strong><br>Placed under bumpers to detect ball impacts. Signals were conditioned 
+                    with a high-pass filter and amplifier to isolate impact events from ambient vibrations.</li>
+            </ul>
+        </section>
+        <section>
+            <h3>Actuators & Motion</h3>
+            <ul>
+                <li><strong>Solenoid Flippers: </strong><br>
+                    Flippers were driven using a transistorized solenoid circuit. Physical buttons fed directly into the gate, allowing immediate 
+                    mechanical response without firmware delay.
+                </li>
+                <li><strong>Servos for moving obstacles: </strong><br>
+                    Two RC servos controlled mechanical obstacles and were driven directly from the Arduino.
+                </li>
+                <li><strong>Motorized elements: </strong><br>
+                    A DC motor was driven through a MOSFET gate-driver stage, receiving a PWM control signal from the microcontroller for variable speed effects.
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h3>Display & Lighting</h3>
+            <ul>
+                <li><strong>Score Display: </strong><br>
+                    7-segment displays were controlled through shift registers for efficient pin usage and synchronized score updates.
+                </li>
+                <li><strong>LED Life Indicator System: </strong><br>
+                    Used LEDs to represent the player’s remaining lives. Each LED was driven through a BJT transistor stage, 
+                    allowing the Arduino to control them reliably. The system illuminated the appropriate number of LEDs based on the 
+                    current game state, providing a simple and clear life indicator.
+                </li>
+
+            </ul>
+        </section>
+        <section>
+            <h3>Power System</h3>
+            <ul>
+                <li>
+                    AC-to-DC wall power fed into a switch, then routed through a set of LDO voltage regulators for stable supply rails. 
+                    Decoupling capacitors were placed throughout to reduce noise and stabilize the analog sections.
+                </li>
+            </ul>
+        </section>
+
+      </section>
+
+      <section>
+        <h2>Challenges & What I Learned</h2>
+        <section>
+            <h3>Sensor Noise & Signal Reliability</h3>
+            <p>Piezo sensors produced extremely weak and inconsistent signals. We solved this by:</p>
+            <ul>
+                <li>Adding dedicated op-amp amplification stages</li>
+                <li>Using comparators for clean edges</li>
+                <li>Adjusting firmware thresholds and timing filters</li>
+                <li>Iteratively stress-testing with actual gameplay</li>
+            </ul>
+            <p>This taught me <strong>embedded signal conditioning</strong>, hardware/firmware co-design, and systematic debugging for mixed-signal systems.</p>
+        </section>
+        <section>
+            <h3>Mechanical Integration & CAD Tolerances</h3>
+            <p>Designing 3D-printed flipper mounts, servo brackets, and sensor housings taught me how <strong>tolerances, material flex, and fastener choices</strong> affect 
+                real-world fit, alignment, and durability.</p>
+        </section>
+        <section>
+            <h3>Event-Driven Firmware Architecture</h3>
+            <p>The game loop required fast, asynchronous handling of multiple sensors and actuators. I learned to structure firmware around events, non-blocking input handling, 
+                state machines, and consistent timing.</p>
+        </section>
+        <section>
+            <h3>Hardware Debugging Under Constraints</h3>
+            <p>Using breadboards led to intermittent connections that we had to trace and fix. Though simple, this taught me discipline in <strong>systematic wiring, power tracing, 
+                continuity testing, and subsystem isolation—skills</strong> crucial in embedded prototyping.
+            </p>
+        </section>
+
+      </section>
+
+      <section>
+        <h2>Skills Demonstrated</h2>
+        <ul>
+            <li>Embedded systems design (Arduino/C++)</li>
+            <li>Event-driven programming & real-time input handling</li>
+            <li>Mixed-signal debugging (piezo, optical sensors)</li>
+            <li>Motor/solenoid/servo control (PWM, gate drivers, transistor switches)</li>
+            <li>Power regulation and decoupling</li>
+            <li>CAD modeling (OnShape), 3D printing, laser cutting</li>
+            <li>Hardware integration & system-level debugging</li>
+            <li>Building a complete electromechanical system from scratch</li>
+        </ul>
+      </section>
+    
+
+      <!-- <div class="project-links">
+        <a href="https://github.com/roreye5/smartwatch" target="_blank" rel="noopener noreferrer">
+          <span class="fa-brands fa-github fa-regular" style="color: hsl(212, 92%, 68%);"></span> 
+          View GitHub
+        </a>
+        <a href="https://youtu.be/nkUvbnEm40k?si=RuHBkc9tYeVuB01G" target="_blank" rel="noopener noreferrer">
+          <span class="fa-brands fa-youtube fa-regular" style="color: hsl(212, 92%, 68%);"></span>
+          Game Controller Demo Video
+        </a>
+      </div> -->
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2024 RobertoR. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

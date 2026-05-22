@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>8-bit Adder Design | Project Details</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+
+  <header class="site-header">
+    <a href="../index.html#digital" class="back-link">← Back to Projects</a>
+  </header>
+
+  <main class="project-detail">
+    <h1>8-bit Custom Adder Design</h1>
+    <img src="../pics/8-bit-adder-pic.png" alt="8-bit adder schematic" class="project-image" />
+
+    <section class="project-description">
+      <h2>Overview</h2>
+      <p>
+        The goal of this digital design project was to develop a custom 8-bit adder with improved speed compared to a synthesized ripple carry adder (RCA). 
+        Efficient adder design is essential for high-performance computing systems, as adders are core components of arithmetic logic units (ALUs) and directly impact computational speed.
+      </p>
+
+      <h2>Design Approach</h2>
+      <p>
+        While the RCA is known for its simplicity, its serial carry propagation leads to high delay. To improve speed, we implemented a hybrid architecture combining a carry-lookahead 
+        adder (CLA) with carry-skip logic. This structure allowed local parallel carry calculations and faster bypassing of unnecessary delays.
+      </p>
+      <p>
+        The final architecture consisted of:
+      </p>
+      <ul>
+        <li>Two 3-bit carry-lookahead adders (CLA)</li>
+        <li>Two half adders</li>
+        <li>Carry-skip logic to bridge the CLA blocks</li>
+      </ul>
+      <p>
+        This hybrid approach used fewer transistors and less power than a full 8-bit CLA, offering a practical trade-off between speed and hardware complexity.
+      </p>
+
+      <h2>Optimization & Results</h2>
+      <p>
+        Some transistor-level optimizations were explored to reduce delay and power usage. While they slightly reduced power consumption, 
+        they didn’t lead to significant increases in maximum operating frequency compared to using standard cells. The final design met 
+        all timing requirements and operated successfully at over 2.4 GHz.
+      </p>
+
+      <div class="project-links">
+        <a href="../pics/8-bit_adder_report.pdf" target="_blank" rel="noopener noreferrer"> 
+          View Full Report with all schematics and results(PDF)
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2024 RobertoR. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

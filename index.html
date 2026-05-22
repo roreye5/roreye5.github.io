@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roberto Reyes - Portfolio</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0&icon_names=file_save" />
+    <!-- <script src="port.js"></script> -->
+    <script src="https://kit.fontawesome.com/52f482920d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+
+                 <li class = "dropdown">
+                    <a href = "#embedded" class = "dropbtn"> PROJECTS </a>
+                    <div class = "drop-content">
+                        <a href="#embedded">Embedded Systems</a>
+                        <a href="#software">Software & Web Dev</a>
+                        <a href="#digital">Digital Design</a>
+                    </div>
+                 </li>
+
+                <li><a href="#resume">RESUME</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h1>Roberto Reyes</h1>
+        <p>Welcome to my project portfolio. I'm an electrical engineer with a focus on computer system design.</p>
+        <a href = "#embedded" class = "btn" id="view"> View Projects </a>
+        <a href = "#contact" class = "btn" id="cont"> Get In Touch </a>
+    </section>
+
+
+    <!---------- Testing Card/ Implementation Here ---------------------->
+    <section class="portfolio-section" id="embedded">
+        <h2>Hardware & Embedded Systems</h2>
+
+        <div class="card-grid">
+      
+            <!-- Card 1 -->
+            <div class="project-card">
+                <img src="pics/HR2.jpg" alt="Smartwatch Project" />
+                <div class="card-text">
+                    <h2>Smartwatch Prototype</h2>
+                    <p>IoT device with step tracking, heart rate monitoring, and weather updates.</p>
+                    <div class="tech-stack">Arduino</div>
+                    <div class="tech-stack">C++</div>
+                    <div class="tech-stack">Python</div>
+                    <div class="card-links">
+                        <a href="https://github.com/roreye5/smartwatch" target="_blank" rel="noopener noreferrer">
+                            <span class="fa-brands fa-github fa-regular" style="color: hsl(212, 92%, 68%);"></span>
+                            Code
+                        </a>
+                        <a href="projects/smartwatch.html">Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comm. Device Card -->
+            <div class="project-card">
+                <img src="pics/comDevEnc.jpg" alt="Communication Device" />
+                <div class="card-text">
+                    <h2>Decentralized Communication Device</h2>
+                    <p>Portable wireless messaging device for use in remote, no-signal environments.</p>
+                    <div class="tech-stack">C++</div>
+                    <div class="tech-stack">ESP-NOW</div>
+                    <div class="tech-stack">Arduino</div>
+                    <div class="tech-stack">3D-printing</div>
+                    <div class="card-links">
+                        <!-- <a href="#">
+                            <span class="fa-brands fa-github fa-regular" style="color: hsl(212, 92%, 68%);"></span>
+                            Code
+                        </a> -->
+                        <a href="projects/com-device.html">Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pinball Machine Card -->
+            <div class="project-card">
+                <img src="pics/pinball.jpg" alt="Pinball Machine" />
+                <div class="card-text">
+                    <h2>Pinball Machine Prototype</h2>
+                    <p>Built from scratch using CAD, Arduino, and 3D printing tools.</p>
+                    <div class="tech-stack">C++</div>
+                    <div class="tech-stack">Arduino</div>
+                    <div class="tech-stack">3D Printing</div>
+                    <div class="tech-stack">Circuit Design</div>
+                    <div class="card-links">
+                        <!-- <a href="#">
+                            <span class="fa-brands fa-github fa-regular" style="color: hsl(212, 92%, 68%);"></span>
+                            Code
+                        </a> -->
+                        <a href="projects/pinball.html">Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Game Controller Card -->
+            <div class="project-card">
+                <img src="pics/GameRC.jpeg" alt="Video Game Controller" />
+                <div class="card-text">
+                    <h2>Video Game Controller Enhancements</h2>
+                    <p>Upgraded video game contoller by improving functionality and adding new features.</p>
+                    <div class="tech-stack">C++</div>
+                    <div class="tech-stack">Python</div>
+                    <div class="tech-stack">Arduino</div>
+                    <div class="tech-stack">OLED</div>
+                    <div class="tech-stack">Accelerometer</div>
+                    <div class="tech-stack">Photodetector</div>
+                    <div class="card-links">
+                        <!-- <a href="#">
+                            <span class="fa-brands fa-github fa-regular" style="color: hsl(212, 92%, 68%);"></span>
+                            Code
+                        </a> -->
+                        <a href="projects/game-controller.html">Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="project-card">
+                <img src="pics/lineCar.png" alt="Line-Following Car" />
+                <div class="card-text">
+                    <h2>Line-Following Car</h2>
+                    <p>Built from scratch using CAD, Arduino, and 3D printing tools.</p>
+                    <div class="tech-stack">3D Printing</div>
+                    <div class="tech-stack">Arduino</div>
+                    <div class="tech-stack">Circuit Design</div>
+                    <!-- <div class="card-links">
+                        <a href="#">
+                            <span class="fa-brands fa-github fa-regular" style="color: hsl(212, 92%, 68%);"></span>
+                            Code
+                        </a>
+                        <a href="#">Details</a>
+                    </div> -->
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+
+    <section class="portfolio-section" id="software">
+        <h2>Software & Web Development</h2>
+
+        <div class="card-grid">
+      
+            <!-- Restaurant Website Card -->
+            <div class="project-card">
+                <img src="pics/HR2.jpg" alt="Restaurant Website" />
+                <div class="card-text">
+                    <h2>Restaurant Ordering Website</h2>
+                    <p>Restaurant ordering web app supporting user and employee roles, with user registration, login, and session-based authentication.</p>
+                    <div class="tech-stack">HTML</div>
+                    <div class="tech-stack">CSS</div>
+                    <div class="tech-stack">JavaScript</div>
+                    <div class="tech-stack">Python</div>
+                    <div class="tech-stack">SQL</div>
+                    <div class="tech-stack">Docker</div>
+                    <!-- <div class="card-links">
+                        <a href="#">
+                            <span class="fa-brands fa-github fa-regular" style="color: hsl(212, 92%, 68%);"></span>
+                            Code
+                        </a>
+                        <a href="projects/">Details</a>
+                    </div> -->
+                </div>
+            </div>
+
+            <!-- C++ Projects Card -->
+            <div class="project-card">
+                <img src="pics/comDevEnc.jpg" alt="Communication Device" />
+                <div class="card-text">
+                    <h2>C++ Projects</h2>
+                    <p>Designed and developed...</p>
+                    <div class="tech-stack">C++</div>
+                    <!-- <div class="card-links">
+                        <a href="#">
+                            <span class="fa-brands fa-github fa-regular" style="color: hsl(212, 92%, 68%);"></span>
+                            Code
+                        </a>
+                        <a href="#">Details</a>
+                    </div> -->
+                </div>
+            </div>
+
+
+
+        </div>
+    </section>
+
+
+    <section class="portfolio-section" id="digital">
+        <h2>Digital Design</h2>
+
+        <div class="card-grid">
+      
+            <!-- SHA-256 Algo. Card -->
+            <div class="project-card">
+                <img src="pics/HR2.jpg" alt="Smartwatch Project" />
+                <div class="card-text">
+                    <h2>SHA-256 Algorithm Implementation</h2>
+                    <p>IoT device with step tracking, heart rate monitor, and weather updates.</p>
+                    <div class="tech-stack">Arduino</div>
+                    <div class="tech-stack">C++</div>
+                    <div class="tech-stack">Python</div>
+                    <!-- <div class="card-links">
+                        <a href="projects/">Details</a>
+                    </div> -->
+                </div>
+            </div>
+
+            <!-- 8-bit Adder Card -->
+            <div class="project-card">
+                <img src="pics/8-bit-adder-pic.png" alt="8-bit adder schematic" />
+                <div class="card-text">
+                    <h2>8-bit Carry Lookahead with Carry-Skip Logic Adder</h2>
+                    <p>Built from scratch using CAD, Arduino, and 3D printing tools.</p>
+                    <div class="tech-stack">Cadence</div>
+                    <div class="card-links">
+                        <a href="projects/8bit-adder.html">Details</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </section>
+
+
+    <!-- End of card testing  -->
+
+
+
+    <!-- <section id="projects">
+        <h2>Projects</h2>
+
+        <div class="project" id = "pinball">
+
+            <div class="info">
+                <h3>Pinball Machine Prototype</h3>
+                <div class="ratio">
+                    <video width="100%" height="100%" frameborder="0" autoplay muted controls>
+                        <source src="pics/pinball.mp4" type="video/mp4">
+                        Your browser does NOT support this video tag.
+                    </video>
+                    <img src="pics/lineCar.png" alt="Car Pic" width="100%" height="100%">
+                </div>
+                
+            </div>
+
+            <div class="info">
+                <h4>Description:</h4>
+                <p>The line-following car is an autonomous vehicle designed to follow a pre-defined path marked by a line 
+                    on the ground. The car uses sensors to detect the line and adjust its movement to stay on track. 
+                    This project was a collaborative effort aimed at integrating various aspects of mechanical design, 
+                    electronics, and programming to create a functional prototype.</p>
+            
+                <h4>Technologies Used: </h4>
+                <ul>
+                    <li>Hardware:
+                        <ul>
+                            <li>Arduino microcontroller</li>
+                            <li>IR sensors</li>
+                            <li>Motors</li>
+                            <li>Breadboards and wiring</li>
+                        </ul>
+                    </li>
+                    <li>Software:
+                        <ul>
+                            <li>Arduino (C++) for programming the microcontroller</li>
+                            <li>Fusion360 for designing the 3D printed and lasercut parts</li>
+                        </ul>
+                    </li>
+                </ul>
+            
+                <h4>Role in the Project:</h4>
+                <ul>
+                    <li>Programing the microcontroller:
+                        <ul>
+                            <li>Assisted in debugging the electronic components and programming to ensure smooth operation of the sensors and motors.</li>
+                            <li>Collaborated with the team to troubleshoot and resolve any issues that arose during the testing phase.</li>
+                            <li>Designed the chassis using Solidworks, focusing on creating a lightweight yet sturdy structure to house all electronic components.</li>
+                            <li>Utilized 3D printing techniques to fabricate the chassis, ensuring precise dimensions and durability.</li>
+                        </ul>
+                    </li>
+                    <li>Programing the microcontrollerChassis Design and 3D Printing:
+                        <ul>
+                            <li>Designed the chassis using Solidworks, focusing on creating a lightweight yet sturdy structure to house all electronic components.</li>
+                            <li>Utilized 3D printing techniques to fabricate the chassis, ensuring precise dimensions and durability.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="project" id = "car">
+
+            <div class="info">
+                <h3>Line Following Car</h3>
+                <div class="ratio">
+                    <video width="100%" height="100%" frameborder="0" autoplay muted controls>
+                        <source src="pics/lineCar3.mp4" type="video/mp4">
+                        Your browser does NOT support this video tag.
+                    </video>
+                    <img src="pics/lineCar.png" alt="Car Pic" width="100%" height="100%">
+                </div>
+            </div>
+
+            <div class="info">
+
+                <h4>Description:</h4>
+                <p>The line-following car is an autonomous vehicle designed to follow a pre-defined path marked by a line 
+                    on the ground. The car uses sensors to detect the line and adjust its movement to stay on track. 
+                    This project was a collaborative effort aimed at integrating various aspects of mechanical design, 
+                    electronics, and programming to create a functional prototype.</p>
+            
+                <h4>Technologies Used: </h4>
+                <ul>
+                    <li>Hardware:
+                        <ul>
+                            <li>Arduino microcontroller</li>
+                            <li>IR sensors</li>
+                            <li>Motors and motor drivers</li>
+                            <li>Breadboards and wiring</li>
+                            <li>Custom 3D printed chassis</li>
+                        </ul>
+                    </li>
+                    <li>Software:
+                        <ul>
+                            <li>Arduino (C++) for programming the microcontroller</li>
+                            <li>Solidworks for designing the chassis</li>
+                        </ul>
+                    </li>
+                </ul>
+            
+                <h4>Role in the Project:</h4>
+                <ul>
+                    <li>Chassis Design and 3D Printing:
+                        <ul>
+                            <li>Designed the chassis using Solidworks, focusing on creating a lightweight yet sturdy structure to house all electronic components.</li>
+                            <li>Utilized 3D printing techniques to fabricate the chassis, ensuring precise dimensions and durability.</li>
+                        </ul>
+                    </li>
+                    <li>Debugging Assistance:
+                        <ul>
+                            <li>Assisted in debugging the electronic components and programming to ensure smooth operation of the sensors and motors.</li>
+                            <li>Collaborated with the team to troubleshoot and resolve any issues that arose during the testing phase.
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        
+        </div>
+
+        
+        <div class="project" id = "watch">
+            <div class="info">
+                <h3>IoT Smartwatch Prototype</h3>
+                <div class="ratio">
+                    <img src="pics/HR2.jpg" alt="HR Monitor Pic" width="100%" height="100%">
+                    <img src="pics/Weather2.jpg" alt="Weather Pic" width="100%" height="100%">
+                </div>
+            </div>
+
+            <div class="info">
+                <h4>Description:</h4>
+                <p>This smartwatch prototype integrates multiple functionalities, including a pedometer, heart rate monitor, idle detection, and real-time weather updates. 
+                    The project involved designing a system capable of processing real-time sensor data while ensuring reliable performance.</p>
+
+                <h4>Technologies Used: </h4>
+                <ul>
+                    <li>Hardware:
+                        <ul>
+                            <li>SparkFun Thing Plus Microcontroller</li>
+                            <li>Accelerometer</li>
+                            <li>Photodetector</li>
+                            <li>OLED screen</li>
+                            <li>ERM Vibration Motor and Buttons</li>
+                            <li>Breadboard and wiring</li>
+                        </ul>
+                    </li>
+                    <li>Software:
+                        <ul>
+                            <li>Arduino (C++)</li>
+                            <li>Python (data processing and visualization)</li>
+                            <li>Machine Learning (Gaussian Mixture Model) using Python</li>
+                            <li>Weather API</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h4>Challenges & Takeaways:</h4>
+                <ul>
+                    <li>Handling noisy or insufficient heart rate data required refining the GMM model to improve accuracy.</li>
+                    <li>Ensuring the smartwatch functioned smoothly across multiple use cases (fitness tracking, idle alerts, weather updates) helped refine my embedded systems and IoT development skills.</li>
+                    <li>Established Bluetooth connectivity for seamless data transmission and integrated live data processing, allowing the system to refine its accuracy as new data is received.</lil>
+                </ul>
+            </div>
+            <div class="info">
+
+            </div>
+        </div>
+    </section> -->
+
+    <section id="resume">
+        <h2>Resume</h2>
+        <a href="pics/Resume.pdf" download target="_blank" rel="noopener noreferrer" class="btnn" id="cont">
+            <span class="material-symbols-outlined">file_save</span>  
+            Download Resume
+        </a>
+    </section>
+
+    <section id="contact">
+        <h2>Let's Work Together</h2>
+        <p>Interested in collaborating on a project or have a question? I'd love to hear from you.</p>
+        <div class="links">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfmiCSxAKn8uW2pne1K-ZeY_-B_I82yel5-bs-wQ8ota4QWsw/viewform?usp=header" target="_blank" rel="noopener noreferrer" class="link">
+                <span class="fa-regular fa-envelope fa-xl" style="color: hsl(212, 92%, 68%);"></span><br>
+                <span class="top">Email</span><br>
+                <span class="bottom">Email me through this form</span>
+            </a>
+            <a href="https://www.linkedin.com/in/roberto-reyes-229209356" target="_blank" rel="noopener noreferrer" class="link">
+                <span class="fa-brands fa-linkedin fa-xl" style="color: hsl(212, 92%, 68%);"></span><br>
+                <span class="top">LinkedIn</span><br>
+                <span class="bottom">Connect with me</span>
+            </a>
+            <a href="https://github.com/roreye5" target="_blank" rel="noopener noreferrer" class="link">
+                <span class="fa-brands fa-github fa-xl" style="color: hsl(212, 92%, 68%);"></span><br>
+                <span class="top">GitHub</span><br>
+                <span class="bottom">View my repositories</span>
+            </a>
+        </div>
+    
+    </section>
+
+    <footer>
+        <p>&copy; 2024 RobertoR. All rights reserved.</p>
+    </footer>
+    
+</body>
+</html>
