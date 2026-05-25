@@ -417,6 +417,9 @@ color: hsl(213, 31%, 97%);
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   border-color: hsl(212, 92%, 68%);
+  transition: transform 0.25s ease, 
+            box-shadow 0.25s ease,
+            border-color 0.25s ease;
 }
 
 .project-card img {
@@ -432,7 +435,7 @@ color: hsl(213, 31%, 97%);
 
 .project-card h2 {
   font-size: 1.3rem;
-  font-weight: 500;
+  font-weight: 600;
   margin: 0 0 0.5rem;
   color: hsl(213, 31%, 97%);
   text-align: left;
@@ -447,10 +450,11 @@ color: hsl(213, 31%, 97%);
 }
 
 .tech-stack{
-    display: inline-block;
+  display: inline-block;
   font-size: 0.8rem;
   color: hsl(213, 31%, 97%);
-  margin-bottom: 0.8rem;
+  margin-right: 0.3rem;
+  margin-bottom: 0.5rem;
   background-color: hsl(215, 28%, 7%);
   padding: 3px 10px;
   border-radius: 7px;
@@ -467,6 +471,14 @@ color: hsl(213, 31%, 97%);
   color: hsl(215, 90%, 54%);
 }
 
+.card-highlight {
+  color: hsl(213, 31%, 85%);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  padding-left: 0.75rem;
+  border-left: 3px solid hsl(212, 92%, 68%);
+}
 
 /* ====================== End of card CSS =========================== */
 
