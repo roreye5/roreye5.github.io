@@ -11,7 +11,35 @@
 </head>
 <body>
     <header>
-        <nav>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="#home">RR</a>
+                </div>
+                <div class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li class="nav-item dropdown">
+                        <a href="#embedded" class="nav-link dropbtn">PROJECTS</a>
+                        <div class="drop-content">
+                            <a href="#embedded">Embedded Systems</a>
+                            <a href="#software">Software & Web Dev</a>
+                            <a href="#digital">Digital Design</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#resume" class="nav-link">RESUME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">CONTACT</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- <nav>
             <ul>
 
                  <li class = "dropdown">
@@ -26,7 +54,7 @@
                 <li><a href="#resume">RESUME</a></li>
                 <li><a href="#contact">CONTACT</a></li>
             </ul>
-        </nav>
+        </nav> -->
     </header>
 
 
@@ -288,6 +316,54 @@
     <footer>
         <p>&copy; 2024 RobertoR. All rights reserved.</p>
     </footer>
+
+        <script>
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const dropdowns = document.querySelectorAll('.dropdown');
+
+        navToggle.addEventListener('click', () => {
+            navToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    const parent = link.closest('.nav-item');
+                    if (parent.classList.contains('dropdown') && !parent.classList.contains('active')) {
+                        e.preventDefault();
+                        dropdowns.forEach(dd => {
+                            if (dd !== parent) {
+                                dd.classList.remove('active');
+                            }
+                        });
+                        parent.classList.toggle('active');
+                    } else if (!parent.classList.contains('dropdown')) {
+                        navToggle.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    }
+                }
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('header')) {
+                navToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+                dropdowns.forEach(dd => dd.classList.remove('active'));
+            }
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                navToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+                dropdowns.forEach(dd => dd.classList.remove('active'));
+            }
+        });
+    </script>
     
 </body>
 </html>

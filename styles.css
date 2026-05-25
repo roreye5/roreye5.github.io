@@ -68,17 +68,65 @@ form label {
 
 header {
     background: hsl(215, 28%, 7%);
-    font-size: 170%;
+    /* font-size: 170%;
     font-weight: 400;
     color: hsl(213, 31%, 97%);
     padding: 10px 0;
     text-align: center;
     border-bottom-style: solid;
     border-width: 2px;
-    border-color: hsl(216, 12%, 21%);
+    border-color: hsl(216, 12%, 21%); */
+    border-bottom: 2px solid hsl(216, 12%, 21%);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-header nav ul {
+.navbar {
+    padding: 1rem 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: hsl(212, 92%, 68%);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.logo a:hover {
+    color: hsl(215, 90%, 54%);
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 6px;
+}
+
+.nav-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: hsl(213, 31%, 97%);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.nav-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(10px, 10px);
+}
+
+/* header nav ul {
     list-style: none;
     padding: 0;
 }
@@ -107,25 +155,90 @@ li.dropdown {
     display: inline-block;
     padding: 1%;
     margin: 0% 1%;
+} */
+
+.nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    display: block;
+    color: hsl(213, 31%, 97%);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.75rem 1.25rem;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+}
+
+.nav-link:hover {
+    color: hsl(212, 92%, 68%);
+    background-color: rgba(58, 175, 255, 0.1);
+}
+
+.dropdown {
+    position: relative;
 }
 
 .drop-content {
     display: none;
     position: absolute;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    font-size: 80%;
+    /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    font-size: 80%; */
+    top: 100%;
+    left: 0;
+    background-color: hsl(217, 19%, 15%);
+    border: 1px solid hsl(216, 12%, 21%);
+    border-radius: 8px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    min-width: 200px;
+    padding: 0.5rem 0;
+    z-index: 10;
 }
 
 .drop-content a {
     display: block;
-    color: black;
+    /* color: black;
     background-color: hsl(213, 31%, 97%);
-    text-align: left;
+    text-align: left; */
+        color: hsl(213, 31%, 97%);
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.drop-content a:first-child {
+    border-radius: 7px 7px 0 0;
+}
+
+.drop-content a:last-child {
+    border-radius: 0 0 7px 7px;
 }
 
 .drop-content a:hover {
-    background-color: rgb(241, 241, 241);
-    color: black;
+    /* background-color: rgb(241, 241, 241);
+    color: black; */
+    background-color: rgba(58, 175, 255, 0.15);
+    color: hsl(212, 92%, 68%);
+    padding-left: 2rem;
 }
 
 .dropdown:hover .drop-content {
@@ -467,6 +580,70 @@ video {
     }
     .btn {
         display: block;
+    }
+
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: hsl(215, 28%, 7%);
+        flex-direction: column;
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        border-bottom: 2px solid hsl(216, 12%, 21%);
+    }
+
+    .nav-menu.active {
+        max-height: 400px;
+    }
+
+    .nav-item {
+        width: 100%;
+    }
+
+    .nav-link {
+        padding: 1rem 1.5rem;
+        border-radius: 0;
+    }
+
+    .dropdown:hover .drop-content {
+        display: none;
+    }
+
+    .drop-content {
+        position: static;
+        display: none;
+        background-color: hsl(215, 20%, 12%);
+        border: none;
+        box-shadow: none;
+        min-width: auto;
+        border-radius: 0;
+    }
+
+    .nav-item.dropdown.active .drop-content {
+        display: block;
+    }
+
+    .drop-content a {
+        padding: 0.75rem 1.5rem 0.75rem 3rem;
+        font-size: 0.85rem;
+    }
+
+    .drop-content a:first-child,
+    .drop-content a:last-child {
+        border-radius: 0;
+    }
+
+    .logo a {
+        font-size: 1.25rem;
     }
 }
 
