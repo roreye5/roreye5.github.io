@@ -562,6 +562,27 @@ video {
     color: #666;
 }
 
+.project-figure {
+  margin: 2rem 0;
+  padding: 1rem;
+  background: hsl(217, 19%, 15%);
+  border: 1px solid hsl(216, 12%, 21%);
+  border-radius: 12px;
+}
+
+.project-figure img {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+}
+
+.project-figure figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: hsl(0, 0%, 69%);
+  text-align: center;
+}
+
 /* ============================================================
    RESPONSIVE DESIGN
    ============================================================ */

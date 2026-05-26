@@ -24,7 +24,7 @@
     <section class="project-description">
       <h2>Overview</h2>
       <p>
-        Designed and implemented an IoT smartwatch using an Arduino-based microcontroller. 
+        Designed and implemented an IoT smartwatch using an ESP32 microcontroller. 
         The device tracks steps with over 90% accuracy, monitors heart rate in real-time, detects idle activity, 
         and pulls local weather data using a basic Python backend.
       </p>
@@ -37,6 +37,17 @@
         <li><strong>Weather and Time updates</strong> based on location via API integration</li>
         <li><strong>Stopwatch</strong> and <strong>Timer</strong> functionality</li>
       </ul>
+
+      <h2>System Architecture</h2>
+      <p>
+        Raw sensor data was collected by the ESP32 and sent to a Python processing pipeline,
+        where step count and heart rate estimates were computed before being displayed on the device.
+      </p>
+
+      <figure class="project-figure">
+        <img src="../pics/smartwatch-diagram.png" alt="Smartwatch system architecture diagram">
+        <figcaption>Data flow between embedded firmware, sensors, Python processing, and OLED display.</figcaption>
+      </figure>
 
       <h2>Software</h2>
       <p>Arduino • C++ • Python • Machine Learning (GMM)</p>
